@@ -26,5 +26,18 @@ public class Main {
 
     controller.setCommand(garage_down);
     controller.buttonPressed();
+
+    Television tele = new Television();
+    controller.setCommand(()->{tele.Turn_on();});
+    controller.buttonPressed();
+    controller.setCommand(()->{tele.Turn_off();});
+    controller.buttonPressed();
+
+    AC ac = new AC();
+    controller.setCommand(ac::Turn_on);
+    controller.buttonPressed();
+    controller.setCommand(ac::Turn_off);
+    controller.buttonPressed();
+
     }
 }
